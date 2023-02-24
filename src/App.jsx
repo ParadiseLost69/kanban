@@ -26,10 +26,7 @@ function App() {
     e.preventDefault();
     dragged.style.display = "block";
 
-    if (e.target.className === "column-1") {
-      e.target.appendChild(dragged);
-    }
-    if (e.target.className === "column-2") {
+    if (e.target.className === "column") {
       e.target.appendChild(dragged);
     }
   }
@@ -37,7 +34,7 @@ function App() {
   return (
     <div className="App">
       <div
-        className="column-1"
+        className="column"
         onDrop={(e) => handleDrop(e)}
         onDragOver={(e) => handleDragOver(e)}
       >
@@ -61,12 +58,12 @@ function App() {
       </div>
 
       <div
-        className="column-2"
+        className="column"
         onDrop={(e) => handleDrop(e)}
         onDragOver={(e) => handleDragOver(e)}
       ></div>
       <div
-        className="column-2"
+        className="column"
         onDrop={(e) => handleDrop(e)}
         onDragOver={(e) => handleDragOver(e)}
       ></div>

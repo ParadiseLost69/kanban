@@ -4,26 +4,19 @@
 .App {
   display: flex;
   height: 100%;
+  min-height: 100dvh;
 }
 
-.column-1,
-.column-2 {
+.column {
   margin: 2rem;
   height: 80vh;
   width: 90%;
   padding: 2rem;
-  border-radius: 5px;
-
-  background-color: #ffd;
-}
-
-.column-1 {
-  border: 3px dotted black;
-  text-decoration-thickness: 2px;
-}
-
-.column-2 {
-  border: 1px solid black;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.181);
+  backdrop-filter: blur(20px);
+  box-shadow: 5px 5px 5px rgba(31, 31, 31, 0.638);
+  border: 1px solid var(--border-color);
 }
 
 .draggable {
@@ -31,10 +24,16 @@
 }
 
 .card {
-  border: 1px solid black;
   padding: 1rem;
   display: flex;
   flex-direction: column;
   text-align: center;
   align-items: cetner;
+  /* background-image: linear-gradient(to left top, #f4c482, #8e9b99); */
+  border: 1px solid var(--border-color);
+  box-shadow: 4px 4px 0px rgba(255, 255, 255, 0.304);
+  background-color: rgba(255, 255, 255, 0.098);
+  color: rgb(234, 234, 234);
+  margin: 1rem;
+  border-radius: 10px;
 }
