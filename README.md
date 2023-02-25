@@ -1,1 +1,1 @@
-Kanban project for
+Kanban project

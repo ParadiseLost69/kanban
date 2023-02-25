@@ -1,7 +1,14 @@
-import { useState } from "react";
+import Column from "./components/column";
 import "./App.css";
+import { useState } from "react";
+import TaskCard from "./components/taskCard";
 
 function App() {
+  const [tasks, setTasks] = useState([
+    { title: "First Task", content: "Do something this weekend" },
+    { title: "Second Task", content: "Finish the assignment" },
+    { title: "Third Task", content: "Buy milk and eggs" },
+  ]);
   let dragged = null;
 
   function handleDragStart(e) {
@@ -22,6 +29,7 @@ function App() {
   }
 
   function handleDrop(e) {
+    //prevent files from opening if dragged
     e.preventDefault();
     dragged.style.display = "block";
     if (e.target.className === "column") {
@@ -31,40 +39,30 @@ function App() {
 
   return (
     <div className="App">
-      <div
-        className="column"
-        onDrop={(e) => handleDrop(e)}
-        onDragOver={(e) => handleDragOver(e)}
-      >
-        <div
-          className="draggable card"
-          draggable={true}
-          onDragStart={(e) => handleDragStart(e)}
-          onDrop={(e) => e.preventDefault}
-        >
-          <h1>Item</h1>
-          <h2>task</h2>
-        </div>
-        <div
-          className="draggable card"
-          draggable={true}
-          onDragStart={(e) => handleDragStart(e)}
-        >
-          <h1>Item 2</h1>
-          <h2>Task 2</h2>
-        </div>
-      </div>
+      <Column
+        title={"To-do"}
+        handleDrop={handleDrop}
+        handleDragOver={handleDragOver}
+      ></Column>
 
-      <div
-        className="column"
-        onDrop={(e) => handleDrop(e)}
-        onDragOver={(e) => handleDragOver(e)}
-      ></div>
-      <div
-        className="column"
-        onDrop={(e) => handleDrop(e)}
-        onDragOver={(e) => handleDragOver(e)}
-      ></div>
+      <Column
+        title={"Doing"}
+        handleDrop={handleDrop}
+        handleDragOver={handleDragOver}
+      >
+        {tasks.map((task) => {
+          return (
+            <TaskCard title={task.title} handleDragStart={handleDragStart}>
+              <p>{task.content}</p>
+            </TaskCard>
+          );
+        })}
+      </Column>
+      <Column
+        title={"Done"}
+        handleDrop={handleDrop}
+        handleDragOver={handleDragOver}
+      ></Column>
     </div>
   );
 }
