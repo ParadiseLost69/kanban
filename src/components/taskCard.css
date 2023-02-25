@@ -1,0 +1,24 @@
+.draggable {
+  cursor: grab;
+}
+
+.card {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  align-items: cetner;
+  /* background-image: linear-gradient(to left top, #f4c482, #8e9b99); */
+  border: 1px solid var(--border-color);
+  box-shadow: 2px 2px 0px rgba(255, 255, 255, 0.304);
+  background-color: rgba(255, 255, 255, 0.098);
+  color: rgb(234, 234, 234);
+  margin: 1rem;
+  border-radius: 10px;
+}
+.card:hover {
+  animation: bulge 0.2s cubic-bezier(0.19, 0.26, 0.79, 1.22) forwards;
+}
+.card:active {
+  cursor: grabbing;
+}

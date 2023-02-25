@@ -1,3 +1,14 @@
 .column-title {
   color: #ffffffa1;
 }
+.column {
+  margin: 2rem;
+  height: 80vh;
+  width: 90%;
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.181);
+  backdrop-filter: blur(20px);
+  box-shadow: 5px 5px 5px rgba(31, 31, 31, 0.638);
+  border: 1px solid var(--border-color);
+}

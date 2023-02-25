@@ -1,4 +1,5 @@
-import React, { Children } from "react";
+import React from "react";
+import "./taskCard.css";
 
 export default function TaskCard({ children, title, handleDragStart }) {
   return (
