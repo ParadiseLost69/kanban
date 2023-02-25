@@ -1,5 +1,5 @@
 import React from "react";
 
-export default function Column() {
-  return <div>column</div>;
+export default function Column({ children }) {
+  return <div>{children}</div>;
 }

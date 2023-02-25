@@ -13,9 +13,7 @@ function App() {
     //set variable so later I can change display back to block
     dragged = e.target;
     dragged.addEventListener("dragend", function () {
-      if (!dragged.parentNode.classList.contains("column")) {
-        dragged.style.display = "block";
-      }
+      dragged.style.display = "block";
     });
   }
 
@@ -26,7 +24,6 @@ function App() {
   function handleDrop(e) {
     e.preventDefault();
     dragged.style.display = "block";
-
     if (e.target.className === "column") {
       e.target.appendChild(dragged);
     }
