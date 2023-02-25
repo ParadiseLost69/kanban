@@ -2,7 +2,6 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
-  const [dragActive, setDragActive] = useState(false);
   let dragged = null;
 
   function handleDragStart(e) {
@@ -10,6 +9,8 @@ function App() {
     setTimeout(() => {
       e.target.style.display = "none";
     }, 5);
+
+    //set variable so later I can change display back to block
     dragged = e.target;
     dragged.addEventListener("dragend", function () {
       if (!dragged.parentNode.classList.contains("column")) {
